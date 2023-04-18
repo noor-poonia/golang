@@ -17,10 +17,18 @@ func main()  {
 	fmt.Println("Hello Golang")
 
 	deferFunc()
+	fmt.Println(add())
 }
 
 func deferFunc() {
 	for i := 0; i < 5; i++ {
 		defer fmt.Println(i)
 	}
+}
+
+func add() string {
+	defer func () string {
+		return "hi"
+	}()
+	return "hello"
 }
