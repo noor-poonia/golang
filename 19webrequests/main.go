@@ -17,7 +17,7 @@ func main()  {
 
 	checkNilError(err)
 
-	// the type is *hhtp.Response
+	// the type is *http.Response
 	fmt.Printf("Type of response is: %T\n", response)
 
 	// caller's responsibility to close the connection

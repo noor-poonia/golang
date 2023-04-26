@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	// channels are the way in which the multiplle go routines can talk to each other
+	// channels are the way in which the multiple go routines can talk to each other
 	// they are like a pipeline through which multiple go routines interact
 	// it allows us to pass a value if somebody is listening to it 
 	// you still won't know what is happening or how much tme will it take but there might be some sort of a signal 
@@ -37,7 +37,7 @@ func main() {
 		wg.Done()
 	}(myChannel, wg)
 
-	// responible fofr putting values into channels - send only
+	// responible for putting values into channels - send only
 	go func(ch chan<- int, wg *sync.WaitGroup)  {
 		myChannel <- 5 // for this we have a listener 
 		myChannel <- 6 // for this the existing listener won't work, we need to add the listener again 
